@@ -5,8 +5,8 @@
   ];
 
   config.var = {
-    hostname = "jack";
-    username = "hadi";
+    hostname = "MyNixServer";
+    username = "wolf";
     configDirectory = "/home/" + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
 
@@ -18,8 +18,8 @@
     extraLocale = "fr_FR.UTF-8";
 
     git = {
-      username = "Hadi";
-      email = "112569860+anotherhadi@users.noreply.github.com";
+      username = "iTeKWolf";
+      email = "72759891+iTeKWolf@users.noreply.github.com";
     };
 
     autoUpgrade = false;
