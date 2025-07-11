@@ -12,7 +12,8 @@
 
   users.users."${config.var.username}" = {
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPG9SE80ZyBcXZK/f5ypSKudaM5Jo3XtQikCnGo0jI5E hadi@nixy"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsjOtvwfTcKXZXo1LAXu9Z14xHxmYB0Co8C17Ad9slg catonquentin150802@gmail.com",
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMgAbF5PAQYLfkI8I9x08DL8GMzMlxmRasz7BeA15SDY Serveur"
     ];
   };
 }
