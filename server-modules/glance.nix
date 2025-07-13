@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  domain = "start.hadi.diy";
+  domain = "start.mynixserveur";
 
   rgb-to-hsl = color:
     let
@@ -51,29 +51,29 @@ in {
                   type = "weather";
                   location = "Paris, France";
                 }
-                {
-                  type = "markets";
-                  markets = [
-                    {
-                      symbol = "BTC-USD";
-                      name = "Bitcoin";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:BTCUSD";
-                    }
-                    {
-                      symbol = "SOL-USD";
-                      name = "Solana";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:SOLUSD";
-                    }
-                    {
-                      symbol = "ETH-USD";
-                      name = "Ethereum";
-                      chart-link =
-                        "https://www.tradingview.com/chart/?symbol=INDEX:ETHUSD";
-                    }
-                  ];
-                }
+                #{
+                #  type = "markets";
+                #  markets = [
+                #    {
+                #      symbol = "BTC-USD";
+                #      name = "Bitcoin";
+                #      chart-link =
+                #        "https://www.tradingview.com/chart/?symbol=INDEX:BTCUSD";
+                #    }
+                #    {
+                #      symbol = "SOL-USD";
+                #      name = "Solana";
+                #      chart-link =
+                #        "https://www.tradingview.com/chart/?symbol=INDEX:SOLUSD";
+                #    }
+                #    {
+                #      symbol = "ETH-USD";
+                #      name = "Ethereum";
+                #      chart-link =
+                #        "https://www.tradingview.com/chart/?symbol=INDEX:ETHUSD";
+                #    }
+                #  ];
+                #}
                 {
                   type = "dns-stats";
                   service = "adguard";
@@ -139,21 +139,21 @@ in {
                         }
                       ];
                     }
-                    {
-                      title = "Homelab";
-                      same-tab = true;
-                      color = "100 50 50";
-                      links = [
-                        {
-                          title = "Router";
-                          url = "http://192.168.1.254/";
-                        }
-                        {
-                          title = "Cloudflare";
-                          url = "https://dash.cloudflare.com/";
-                        }
-                      ];
-                    }
+                    #{
+                    #  title = "Homelab";
+                    #  same-tab = true;
+                    #  color = "100 50 50";
+                    #  links = [
+                    #    {
+                    #      title = "Router";
+                    #      url = "http://192.168.1.254/";
+                    #    }
+                    #    {
+                    #      title = "Cloudflare";
+                    #      url = "https://dash.cloudflare.com/";
+                    #    }
+                    #  ];
+                    #}
                     {
                       title = "Work";
                       same-tab = true;
@@ -230,7 +230,7 @@ in {
                   type = "server-stats";
                   servers = [{
                     type = "local";
-                    name = "Jack";
+                    name = "MyNixServeur";
                   }];
                 }
                 {
@@ -241,29 +241,29 @@ in {
                       title = "Services";
                       cache = "1m";
                       sites = [
-                        {
-                          title = "Vaultwarden";
-                          url = "https://vault.hadi.diy";
-                          icon = "si:bitwarden";
-                        }
+                        #{
+                        #  title = "Vaultwarden";
+                        #  url = "https://vault.hadi.diy";
+                        #  icon = "si:bitwarden";
+                        #}
                         {
                           title = "Nextcloud";
-                          url = "https://cloud.hadi.diy";
+                          url = "https://cloud.mynixserveur";
                           icon = "si:nextcloud";
                         }
                         {
                           title = "Adguard";
-                          url = "https://adguard.hadi.diy";
+                          url = "https://adguard.mynixserveur";
                           icon = "si:adguard";
                         }
                         {
                           title = "Hoarder";
-                          url = "https://hoarder.hadi.diy";
+                          url = "https://hoarder.mynixserveur";
                           icon = "si:bookstack";
                         }
                         {
                           title = "Mealie";
-                          url = "https://mealie.hadi.diy";
+                          url = "https://mealie.mynixserveur";
                           icon = "si:mealie";
                         }
                       ];
@@ -275,37 +275,37 @@ in {
                       sites = [
                         {
                           title = "Jellyfin";
-                          url = "https://jellyfin.hadi.diy";
+                          url = "https://jellyfin.mynixserveur";
                           icon = "si:jellyfin";
                         }
                         {
                           title = "Jellyseerr";
-                          url = "https://jellyseerr.hadi.diy";
+                          url = "https://jellyseerr.mynixserveur";
                           icon = "si:odysee";
                         }
                         {
                           title = "Radarr";
-                          url = "https://radarr.hadi.diy";
+                          url = "https://radarr.mynixserveur";
                           icon = "si:radarr";
                         }
                         {
                           title = "Sonarr";
-                          url = "https://sonarr.hadi.diy";
+                          url = "https://sonarr.mynixserveur";
                           icon = "si:sonarr";
                         }
                         {
                           title = "Prowlarr";
-                          url = "https://prowlarr.hadi.diy";
+                          url = "https://prowlarr.mynixserveur";
                           icon = "si:podcastindex";
                         }
                         {
                           title = "SABnzbd";
-                          url = "https://sabnzbd.hadi.diy";
+                          url = "https://sabnzbd.mynixserveur";
                           icon = "si:sabanci";
                         }
                         {
                           title = "Transmission";
-                          url = "https://transmission.hadi.diy";
+                          url = "https://transmission.mynixserveur";
                           icon = "si:transmission";
                         }
                       ];
@@ -317,17 +317,20 @@ in {
           ];
           name = "Home";
         }];
-        server = { port = 5678; };
+        server = { 
+          port = 5678;
+          host = "0.0.0.0";
+        };
       };
     };
-    nginx.virtualHosts."${domain}" = {
-      useACMEHost = "hadi.diy";
-      forceSSL = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:${
-            toString config.services.glance.settings.server.port
-          }";
-      };
-    };
+    #nginx.virtualHosts."${domain}" = {
+    #  useACMEHost = "mynixserveur";
+    #  forceSSL = true;
+    #  locations."/" = {
+    #    proxyPass = "http://127.0.0.1:${
+    #        toString config.services.glance.settings.server.port
+    #      }";
+    # };
+    #};
   };
 }

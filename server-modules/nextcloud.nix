@@ -1,14 +1,14 @@
 { pkgs, config, ... }:
-let domain = "cloud.hadi.diy";
+let domain = "cloud.mynixserveur";
 in {
   services = {
-    nginx.virtualHosts = {
-      "${domain}" = {
+    #nginx.virtualHosts = {
+    #  "${domain}" = {
         # DNS-01 challenge
-        useACMEHost = "hadi.diy";
-        forceSSL = true;
-      };
-    };
+    #    useACMEHost = "hadi.diy";
+    #    forceSSL = true;
+    #  };
+    #};
     nextcloud = {
       enable = true;
       hostName = domain;
@@ -16,7 +16,7 @@ in {
       database.createLocally = true;
       configureRedis = true;
       maxUploadSize = "16G";
-      https = true;
+    #  https = true;
       autoUpdateApps.enable = true;
       settings = {
         trusted_domains = [ domain ];
@@ -39,7 +39,7 @@ in {
       };
       config = {
         dbtype = "pgsql";
-        adminuser = "hadi";
+        adminuser = "wolf#";
         adminpassFile = config.sops.secrets.nextcloud-pwd.path;
       };
       # Suggested by Nextcloud's health check.

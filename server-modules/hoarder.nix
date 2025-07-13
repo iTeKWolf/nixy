@@ -1,5 +1,5 @@
 { config, ... }:
-let domain = "hoarder.hadi.diy";
+let domain = "hoarder.mynixserveur";
 in {
   systemd.tmpfiles.rules = [ 
     "d /var/lib/hoarder/web 0755 root root -" 
@@ -11,7 +11,7 @@ in {
       environmentFiles = [ config.sops.secrets.hoarder.path ];
       image = "ghcr.io/hoarder-app/hoarder:release";
       volumes = [ "/var/lib/hoarder/web:/data" ];
-      ports = [ "127.0.0.1:3131:3000" ];
+      ports = [ "0.0.0.0:3131:3000" ];
       environment = {
         HOARDER_VERSION = "release";
         NEXTAUTH_URL = "https://" + domain;
@@ -42,9 +42,9 @@ in {
       ];
     };
   };
-  services.nginx.virtualHosts."${domain}" = {
-    useACMEHost = "hadi.diy";
-    forceSSL = true;
-    locations."/" = { proxyPass = "http://127.0.0.1:3131"; };
-  };
+  #services.nginx.virtualHosts."${domain}" = {
+  #  useACMEHost = "hadi.diy";
+  #  forceSSL = true;
+  #  locations."/" = { proxyPass = "http://127.0.0.1:3131"; };
+  #};
 }
