@@ -1,8 +1,8 @@
 {config, ...}: let
-  domain = "hadi.diy";
+  domain = "mynixserveur";
   mkVirtualHost = port: {
-    useACMEHost = domain;
-    forceSSL = true;
+    #useACMEHost = domain;
+    #forceSSL = true;
     locations."/" = {proxyPass = "http://127.0.0.1:${toString port}";};
   };
   my-username = config.var.username;
