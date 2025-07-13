@@ -1,5 +1,5 @@
 { config, ... }:
-let domain = "mealie.hadi.diy";
+let domain = "mealie.mynixserveur";
 in {
   services = {
     mealie = {
@@ -8,8 +8,8 @@ in {
     };
 
     nginx.virtualHosts."${domain}" = {
-      useACMEHost = "hadi.diy";
-      forceSSL = true;
+      #useACMEHost = "hadi.diy";
+      #forceSSL = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:${toString config.services.mealie.port}";
       };
