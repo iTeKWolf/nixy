@@ -1,12 +1,12 @@
 { config, ... }:
-let domain = "adguard.hadi.diy";
+let domain = "adguard.mynixserveur";
 in {
   services = {
     adguardhome = {
       enable = true;
       port = 3000;
       #reco GPT
-      settings.bind_host = "0.0.0.0";  # Important pour accès via Tailscale
+      host = "0.0.0.0";  # Important pour accès via Tailscale
     };
 
     #nginx.virtualHosts."${domain}" = {
@@ -16,6 +16,6 @@ in {
     #    proxyPass =
     #      "http://127.0.0.1:${toString config.services.adguardhome.port}";
     #  };
-    };
+    #};
   };
 }

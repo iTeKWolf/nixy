@@ -61,7 +61,7 @@
           inputs.stylix.nixosModules.stylix
           inputs.sops-nix.nixosModules.sops
           inputs.nixarr.nixosModules.default
-          inputs.search-nixos-api.nixosModules.search-nixos-api
+          #inputs.search-nixos-api.nixosModules.search-nixos-api
           ./hosts/server/configuration.nix
         ];
       };
