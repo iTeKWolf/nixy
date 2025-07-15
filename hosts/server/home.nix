@@ -22,7 +22,7 @@
     packages = with pkgs; [
       # Dev
       go
-      nodejs
+      #nodejs
       python3
       jq
       just

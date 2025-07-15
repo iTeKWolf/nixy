@@ -9,18 +9,19 @@
     ../../nixos/tailscale.nix
 
     ../../server-modules/ssh.nix
-    #../../server-modules/bitwarden.nix
-    ../../server-modules/firewall.nix
-    #../../server-modules/nginx.nix
-    ../../server-modules/nextcloud.nix
-    ../../server-modules/glance.nix
-    ../../server-modules/adguardhome.nix
-    ../../server-modules/hoarder.nix
-    ../../server-modules/arr.nix
-    ../../server-modules/mealie.nix
+    #../../server-modules/firewall.nix
+    #../../server-modules/nextcloud.nix
+    #../../server-modules/glance.nix
+    #../../server-modules/adguardhome.nix
+    #../../server-modules/hoarder.nix
+    #../../server-modules/arr.nix
+    #../../server-modules/mealie.nix
+
     # ../../server-modules/meilisearch.nix
     #../../server-modules/search-nixos-api.nix
     # ../../server-modules/headscale.nix
+    #../../server-modules/bitwarden.nix
+    #../../server-modules/nginx.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
