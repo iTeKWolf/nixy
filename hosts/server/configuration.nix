@@ -9,13 +9,13 @@
     ../../nixos/tailscale.nix
 
     ../../server-modules/ssh.nix
-    #../../server-modules/firewall.nix
-    #../../server-modules/nextcloud.nix
-    #../../server-modules/glance.nix
-    #../../server-modules/adguardhome.nix
-    #../../server-modules/hoarder.nix
-    #../../server-modules/arr.nix
-    #../../server-modules/mealie.nix
+    ../../server-modules/firewall.nix
+    ../../server-modules/nextcloud.nix
+    ../../server-modules/glance.nix
+    ../../server-modules/adguardhome.nix
+    ../../server-modules/hoarder.nix
+    ../../server-modules/arr.nix
+    ../../server-modules/mealie.nix
 
     # ../../server-modules/meilisearch.nix
     #../../server-modules/search-nixos-api.nix

@@ -1,5 +1,8 @@
-{ pkgs, config, ... }: {
-
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     # Mostly user-specific configuration
     ./variables.nix
@@ -22,7 +25,7 @@
     packages = with pkgs; [
       # Dev
       go
-      #nodejs
+      nodejs
       python3
       jq
       just
