@@ -1,7 +1,7 @@
 {config, ...}: {
   fileSystems."/mnt/disque" = {
-    device = "/dev/disk/by-uuid/6F7F-DF73"; # Remplace par ton UUID
+    device = "/dev/disk/by-uuid/249E-DA70"; # Remplace par ton UUID
     fsType = "exfat";
-    options = ["defaults" "nofail"]; # Pas de automount, pas de démontage auto
+    options = ["nofail" "uid=1000" "gid=169" "umask=002"]; # Pas d'echec si disque absent au démarrage
   };
 }
