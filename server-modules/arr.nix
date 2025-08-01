@@ -16,7 +16,7 @@ in {
       owner = "recyclarr";
       mode = "0777";
     };
-    wireguard-pia = {
+    wireguard-mullvad = {
       group = "media";
       mode = "0600";
     };
@@ -25,9 +25,13 @@ in {
   nixarr = {
     enable = true;
 
+    mediaUsers = [my-username];
+    mediaDir = "/mnt/disque/Média";
+    stateDir = "/mnt/disque/.state/nixarr";
+
     vpn = {
       enable = true;
-      wgConf = config.sops.secrets.wireguard-pia.path;
+      wgConf = config.sops.secrets.wireguard-mullvad.path;
     };
 
     jellyfin.enable = true;
