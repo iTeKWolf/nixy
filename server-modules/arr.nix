@@ -26,8 +26,8 @@ in {
     enable = true;
 
     mediaUsers = [my-username];
-    mediaDir = "/mnt/disque/Média";
-    stateDir = "/mnt/disque/.state/nixarr";
+    mediaDir = "/mnt/disque/data/media";
+    stateDir = "/mnt/disque/data/.state/nixarr";
 
     vpn = {
       enable = true;
