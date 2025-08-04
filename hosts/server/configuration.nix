@@ -26,7 +26,6 @@
     # You should let those lines as is
     ./hardware-configuration.nix
     ./variables.nix
-    ./disque-dur.nix
     ./secrets
   ];
 
