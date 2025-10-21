@@ -125,10 +125,10 @@ in {
   '';
 
   
-  nix.gc = {
-    automatic = true;
-    dates = "daily"; # ou weekly, etc.
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "daily"; # ou weekly, etc.
     # Conserver les générations plus récentes que 30 jours
-    options = "--delete-older-than 30d";
-  };
+  #  options = "--delete-older-than 30d";
+  #};
 }
